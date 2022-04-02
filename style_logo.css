@@ -1,0 +1,110 @@
+#keyboard__block {
+    grid-area: keyboard__block;
+    text-align: center;
+}
+
+.key {
+    padding-top: 5px;
+    display: inline-block;
+    color: transparent;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    height: calc(4em - 5px);
+    width: 4em;
+    background-color: rgb(10, 10, 10);
+    background: linear-gradient(crimson, gold, yellowgreen, teal, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-attachment: fixed;
+    animation: background 4s infinite alternate;
+}
+
+.key:hover {
+    text-decoration-line: none;
+    cursor: pointer;
+    background: rgb(10, 10, 10);
+    color: #FFF;
+    -webkit-text-fill-color: #FFF;
+}
+
+.key_down,
+.key:active {
+    text-decoration-line: none;
+    cursor: pointer;
+    background: rgb(6, 6, 6);
+    color: #FFF;
+    -webkit-text-fill-color: #FFF;
+}
+
+.line_key {
+    font-size: 24px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: transparent;
+}
+
+.space__key {
+    width: 22.2em;
+}
+
+.shift__key {
+    width: 10em;
+}
+
+.opt_key {
+    width: 5.5em;
+}
+
+.return_key {
+    width: 10em;
+}
+
+.caps_key {
+    width: 7em;
+}
+
+.delete_key {
+    margin-right: 1.5em;
+}
+
+.button_key {
+    padding-top: 5px;
+    display: inline-block;
+    color: transparent;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    height: calc(4em - 5px);
+    width: 4em;
+    background-color: rgb(15, 15, 15);
+    width: 7em;
+    height: 2em;
+    margin: auto 0;
+    font-size: 14px;
+    padding: auto;
+    margin: 0;
+    color: #fff;
+}
+
+.button_key:hover {
+    background-color: rgb(10, 10, 10);
+}
+
+.button_key:active {
+    background-color: rgb(6, 6, 6);
+}
+
+@keyframes background {
+    100% {
+        background-position: 0 600px;
+    }
+}

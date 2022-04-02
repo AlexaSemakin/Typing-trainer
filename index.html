@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link href="style_logo.css" rel="stylesheet">
+    <script src="logic.js"></script>
+</head>
+
+<body class="none_selection_text">
+    <div id="header">
+        <a class="header__title__logo">Viarune</a>
+        <br>
+        <a class="header__under-title">typing</a>
+    </div>
+    <div id="parameters" style="display: none;">
+        <div id="parameters__time">
+            <div id="parameters__time__title">
+                Время печати
+            </div>
+            <div id="parameters__time__value">
+
+            </div>
+        </div>
+        <div id="parameters__speed">
+            <div id="parameters__speed__title">
+                Скорость печати
+            </div>
+            <div id="parameters__speed__value">
+
+            </div>
+        </div>
+        <div id="parameters__wrongs">
+            <div id="parameters__wrongs__title">
+                Точность(%)
+            </div>
+            <div id="parameters__wrongs__value">
+
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="content">
+            <div id="welcome__text">
+                <a class="welcome__title__text">Преветствуем!</a>
+            </div>
+            <div id="welcome__under-title">
+                <a class="welcome__under-title__text">Тренеруй свои навыки скоропечатания.</a>
+            </div>
+            <div id="start__typing__button">
+                <a class="button_key none_selection_text" onclick="start_typing()">Начнем!</a>
+            </div>
+        </div>
+    </div>
+    <div id="keyboard__block">
+        <div id="background_block" class="none_selection_text">
+            <div class="line_key">
+                <div id="Backquote" class="key">esc<br>` ~</div>
+                <div id="Digit1" class="key">1<br>!</div>
+                <div id="Digit2" class="key">2<br>@</div>
+                <div id="Digit3" class="key">3<br>#</div>
+                <div id="Digit4" class="key">4<br>$</div>
+                <div id="Digit5" class="key">5<br>%</div>
+                <div id="Digit6" class="key">6<br>^</div>
+                <div id="Digit7" class="key">7<br>&</div>
+                <div id="Digit8" class="key">8<br>*</div>
+                <div id="Digit9" class="key">9<br>(</div>
+                <div id="Digit0" class="key">0<br>)</div>
+                <div id="Minus" class="key">-<br>_</div>
+                <div id="Equal" class="key">=<br>+</div>
+                <div id="Backspace" class="key delete_key">delete<br>&nbsp;</div>
+            </div>
+            <div class="line_key">
+                <div id="Tab" class="key opt_key">Tab<br>&nbsp;</div>
+                <div id="KeyQ" class="key">Q<br>Й</div>
+                <div id="KeyW" class="key">W<br>Ц</div>
+                <div id="KeyE" class="key">E<br>У</div>
+                <div id="KeyR" class="key">R<br>К</div>
+                <div id="KeyT" class="key">T<br>Е</div>
+                <div id="KeyY" class="key">Y<br>Н</div>
+                <div id="KeyU" class="key">U<br>Г</div>
+                <div id="KeyI" class="key">I<br>Ш</div>
+                <div id="KeyO" class="key">O<br>Щ</div>
+                <div id="KeyP" class="key">P<br>З</div>
+                <div id="BracketLeft" class="key">[<br>Х</div>
+                <div id="BracketRight" class="key">]<br>Ъ</div>
+                <div id="Backslash" class="key">\<br>|</div>
+            </div>
+            <div class="line_key">
+                <div id="CapsLock" class="key caps_key">Caps lock<br>&nbsp;</div>
+                <div id="KeyA" class="key">A<br>Ф</div>
+                <div id="KeyS" class="key">S<br>Ы</div>
+                <div id="KeyD" class="key">D<br>В</div>
+                <div id="KeyF" class="key">F<br>А</div>
+                <div id="KeyG" class="key">G<br>П</div>
+                <div id="KeyH" class="key">H<br>Р</div>
+                <div id="KeyJ" class="key">J<br>О</div>
+                <div id="KeyK" class="key">K<br>Л</div>
+                <div id="KeyL" class="key">L<br>Д</div>
+                <div id="Semicolon" class="key">;&nbsp;&nbsp;:<br>Ж</div>
+                <div id="Quote" class="key">'&nbsp;&nbsp;"<br>Э</div>
+                <div id="Enter" class="key caps_key">return<br>&nbsp;</div>
+            </div>
+            <div class="line_key">
+                <div id="ShiftLeft" class="key shift__key">Shift<br>&nbsp;</div>
+                <div id="KeyZ" class="key">Z<br>Я</div>
+                <div id="KeyX" class="key">X<br>Ч</div>
+                <div id="KeyC" class="key">C<br>С</div>
+                <div id="KeyV" class="key">V<br>М</div>
+                <div id="KeyB" class="key">B<br>И</div>
+                <div id="KeyN" class="key">N<br>Т</div>
+                <div id="KeyM" class="key">M<br>Ь</div>
+                <div id="Comma" class="key">,&nbsp;&nbsp;&lt;<br>Б</div>
+                <div id="Period" class="key">.&nbsp;&nbsp;&gt;<br>Ю</div>
+                <div id="Slash" class="key">/&nbsp;&nbsp;?<br>.&nbsp;&nbsp;,</div>
+                <div id="ArrowUp" class="key">&#9650;<br>&nbsp;</div>
+                <div id="ShiftRight" class="key">shift<br>&nbsp;</div>
+            </div>
+            <div class="line_key">
+                <div id="Keyfn" class="key">fn<br>&nbsp;</div>
+                <div id="ControlLeft" class="key">ctrl<br>&nbsp;</div>
+                <div id="AltLeft" class="key">opt<br>&nbsp;</div>
+                <div id="MetaLeft" class="key opt_key">cmd<br>&nbsp;</div>
+                <div id="Space" class="key space__key">&nbsp;<br>&nbsp;</div>
+                <div id="MetaRight" class="key">cmd<br>&nbsp;</div>
+                <div id="AltRight" class="key">opt<br>&nbsp;</div>
+                <div id="ArrowLeft" class="key">&#9668;<br>&nbsp;</div>
+                <div id="ArrowDown" class="key">&#9660;<br>&nbsp;</div>
+                <div id="ArrowRight" class="key">&#9658;<br>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

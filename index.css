@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic');
+@import url(https://allfont.net/allfont.css?fonts=agency-fb);
+@import url(https://allfont.net/allfont.css?fonts=agency-fb-bold);
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(15, 15, 15);
+    min-width: 931px;
+    font-size: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "header" "parameters" "type_block" "keyboard__block";
+    grid-template-rows: 1fr 1fr 2fr 350px;
+}
+
+#main {
+    display: grid;
+    grid-area: type_block;
+    align-content: center;
+}
+
+.none_selection_text {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#header {
+    grid-template: header;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#parameters {
+    grid-area: parameters;
+    display: grid;
+    grid-template-areas: "air_l parameters__time parameters__speed parameters__wrongs air_r";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    color: #ececec;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    align-items: center;
+}
+
+#parameters__time,
+#parameters__speed,
+#parameters__wrongs {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#parameters__time__title,
+#parameters__speed__title,
+#parameters__wrongs__title {
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+#parameters__time {
+    grid-area: parameters__time;
+}
+
+#parameters__speed {
+    grid-area: parameters__speed;
+}
+
+#parameters__wrongs {
+    grid-area: parameters__wrongs;
+}
+
+#big_char {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    background-color: #FFF;
+    width: 1em;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto 0 auto;
+    padding: 0.5em;
+    margin-bottom: 20px;
+}
+
+#content {
+    text-align: center;
+}
+
+.header__title__logo {
+    font-family: 'Agency FB Bold', arial;
+    padding-right: 5px;
+    color: #f7d53f;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 22px;
+}
+
+.header__under-title {
+    font-family: Montserrat;
+    color: #ececec;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+#welcome__text {
+    padding: 10px;
+}
+
+#welcome__under-title {
+    padding-bottom: 10px;
+}
+
+.welcome__title__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    color: #ececec;
+}
+
+.welcome__under-title__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 12px;
+    color: #ececec;
+}
+
+.work__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0px;
+    color: #ececec;
+    margin: 0 auto;
+    max-width: 910px;
+    overflow-x: auto;
+    padding: 15px 0 10px 0;
+}
+
+.work__text::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#lenta__text {
+    font-size: 0px;
+    height: auto;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+#past__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 0px;
+    color: #4b4949;
+}
+
+#now__char {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 0px;
+    color: #ececec;
+}
+
+#carriage__char {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+#future__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 0px;
+    color: #ececec;
+}
+
+#start__typing__button {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.style_wrong {
+    color: crimson;
+    animation: style_wrong 2s infinite alternate;
+}
+
+@keyframes style_wrong {
+    50% {
+        color: darkviolet;
+    }
+}
+
+.style_ok {
+    color: #85FFBD;
+    animation: style_ok 2s infinite alternate;
+}
+
+@keyframes style_ok {
+    50% {
+        color: #FFFB7D;
+    }
+}
