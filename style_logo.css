@@ -81,16 +81,11 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    height: calc(4em - 5px);
-    width: 4em;
     background-color: rgb(15, 15, 15);
-    width: 7em;
     height: 2em;
-    margin: auto 0;
+    /* margin: auto; */
     font-size: 14px;
-    padding: auto;
+    padding: 0.5em 1em 0em 1em;
     margin: 0;
     color: #fff;
 }

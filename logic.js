@@ -7,6 +7,10 @@ var time_now = 0,
     count_errors = 0;
 var timer_work = false;
 
+var text_timer = "",
+    text_speed = "",
+    text_mistakes = "";
+
 document.addEventListener('keydown', function(event) {
     if (event.key != 'CapsLock') {
         document.getElementById(event.code.toString()).classList.add("key_down");
@@ -40,7 +44,6 @@ async function start_typing() {
 async function change_typing_text(char) {
     if (char == null) {
         let textForTyping = await get_text();
-        console.log(textForTyping);
         future_text = textForTyping.substring(1, textForTyping.length);
         now_char = textForTyping[0];
         past_text = "";
@@ -62,6 +65,8 @@ async function change_typing_text(char) {
             }
             document.getElementById('past__text').innerHTML = past_text;
             if (now_char == null) {
+                next_text();
+                set_results(text_timer, text_speed, text_mistakes);
                 change_typing_text();
             } else {
                 document.getElementById('now__char').innerHTML = now_char;
@@ -87,14 +92,16 @@ async function change_typing_text(char) {
 }
 
 function start_parameters() {
-    document.getElementById("parameters__wrongs__value").innerHTML = (0).toString()
+    text_mistakes = (0).toString();
+    document.getElementById("parameters__wrongs__value").innerHTML = text_mistakes;
     restart_timer();
     start_timer();
     timer();
 }
 
 function add_wrong() {
-    document.getElementById("parameters__wrongs__value").innerHTML = (++count_errors).toString();
+    text_mistakes = (++count_errors).toString();
+    document.getElementById("parameters__wrongs__value").innerHTML = text_mistakes;
 }
 
 function start_timer() {
@@ -109,16 +116,18 @@ function restart_timer() {
     time_now = 0;
 }
 
+
 function timer() {
     if (time_now % 10 == 0) {
         let time = time_now / 10;
-        document.getElementById("parameters__time__value").innerHTML =
+        text_timer =
             (Math.floor((Math.floor(Math.floor(time / 60) / 60) % 24) / 10)).toString() +
             (Math.floor(Math.floor(time / 60) / 60) % 24 % 10).toString() + ":" +
             (Math.floor(Math.floor(time / 60) % 60 / 10)).toString() +
             (Math.floor(time / 60) % 60 % 10).toString() + ":" +
             (Math.floor((time % 60) / 10)).toString() +
             ((time % 60) % 10).toString();
+        document.getElementById("parameters__time__value").innerHTML = text_timer;
     }
     if (timer_work) {
         time_now++;
@@ -131,13 +140,14 @@ function timer() {
 
 function change_speed() {
     if (past_text != "") {
+        text_speed = Math.floor(past_text.length / ((time_now / 10) / 60)).toString();
         document.getElementById("parameters__speed__value").innerHTML = Math.floor(past_text.length / ((time_now / 10) / 60)).toString();
     } else {
         document.getElementById("parameters__speed__value").innerHTML = "Начните печать";
     }
 }
 
-async function get_text() {
+async function next_text() {
     let num = 0;
     if (localStorage.getItem('num') != null) {
         num = parseInt(localStorage.getItem('num'));
@@ -146,5 +156,28 @@ async function get_text() {
     num %= 81;
     num = num == 0 ? 1 : num;
     localStorage.setItem('num', num.toString());
+}
+
+async function get_text() {
+    let num = 0;
+    if (localStorage.getItem('num') != null) {
+        num = parseInt(localStorage.getItem('num'));
+    }
+    num %= 81;
+    num = num == 0 ? 1 : num;
+    localStorage.setItem('num', num.toString());
     return await (await fetch("texts/" + num.toString() + ".txt")).text()
+}
+
+function get_result() {
+    if (localStorage.getItem('results') == null) {
+        alert("no results");
+    }
+    alert(localStorage.getItem('results'));
+}
+
+function set_results(time, speed, mistaks) {
+    var dateTime = new Date();
+    // var dateTime = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();;
+    localStorage.setItem("results", "Время завершения: " + dateTime.toString() + "\n" + "Время выполнения: " + time.toString() + "\n" + "Полезная скорость: " + speed.toString() + "\n" + "Кол-во ошибок: " + mistaks.toString());
 }
