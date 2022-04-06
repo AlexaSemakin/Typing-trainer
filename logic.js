@@ -172,8 +172,9 @@ async function get_text() {
 function get_result() {
     if (localStorage.getItem('results') == null) {
         alert("no results");
+    } else {
+        alert(localStorage.getItem('results'));
     }
-    alert(localStorage.getItem('results'));
 }
 
 function set_results(time, speed, mistaks) {
