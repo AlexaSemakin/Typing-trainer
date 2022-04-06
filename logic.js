@@ -1,3 +1,5 @@
+var objecct;
+
 var now_char = '',
     past_text = '',
     future_text = '';
@@ -37,9 +39,10 @@ async function start_typing() {
 
 async function change_typing_text(char) {
     if (char == null) {
-        let getText = await (await fetch("text.txt")).text();
-        now_char = getText[0];
-        future_text = getText.substring(1, getText.length);
+        let textForTyping = await get_text();
+        console.log(textForTyping);
+        future_text = textForTyping.substring(1, textForTyping.length);
+        now_char = textForTyping[0];
         past_text = "";
         document.getElementById('past__text').innerHTML = past_text;
         document.getElementById('now__char').innerHTML = now_char;
@@ -134,22 +137,14 @@ function change_speed() {
     }
 }
 
-// function get_text() {
-//     let text = await (await fetch("text.html")).text();
-//     let get_dots = get_fish_text(text);
-
-// }
-
-// function get_fish_text(text) {
-//     let count = 0;
-//     text.forEach(element => {
-//         if (element == '.') {
-//             count++;
-//         }
-//     });
-//     return count;
-// }
-
-// function name() {
-
-// }
+async function get_text() {
+    let num = 0;
+    if (localStorage.getItem('num') != null) {
+        num = parseInt(localStorage.getItem('num'));
+    }
+    num++;
+    num %= 81;
+    num = num == 0 ? 1 : num;
+    localStorage.setItem('num', num.toString());
+    return await (await fetch("texts/" + num.toString() + ".txt")).text()
+}
