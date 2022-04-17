@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic');
-@import url(https://allfont.net/allfont.css?fonts=agency-fb);
-@import url(https://allfont.net/allfont.css?fonts=agency-fb-bold);
+
+/* @import url(https://allfont.net/allfont.css?fonts=agency-fb); */
+
+
+/* @import url(https://allfont.net/allfont.css?fonts=agency-fb-bold); */
+
 body,
 html {
     margin: 0;
@@ -206,6 +210,10 @@ body {
 #start__typing__button {
     text-align: center;
     padding-top: 10px;
+}
+
+.button_key {
+    cursor: pointer;
 }
 
 .style_wrong {
