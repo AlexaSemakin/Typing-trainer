@@ -83,7 +83,8 @@ async function change_typing_text(char) {
     }
     let y_scroll = document.getElementById('carriage__char').getBoundingClientRect().left;
     console.log(y_scroll);
-    document.getElementById('work__text').scrollBy(y_scroll - 1000, 0);
+
+    document.getElementById('work__text').scrollBy(y_scroll - window.innerWidth / 2, 0);
     console.log(document.getElementById('carriage__char').getBoundingClientRect().left);
     if (now_char == '&nbsp;') {
         document.getElementById('big_char').innerHTML = "&apos;_&apos;";
