@@ -176,7 +176,7 @@ function get_result() {
     if (localStorage.getItem('results') == null) {
         alert("no results");
     } else {
-        alert("{" + localStorage.getItem('num') + "}" + localStorage.getItem('results'));
+        alert("Task {" + localStorage.getItem('num') + "}. " + localStorage.getItem('results'));
     }
 }
 
