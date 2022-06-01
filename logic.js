@@ -52,8 +52,8 @@ async function change_typing_text(char) {
         document.getElementById('future__text').innerHTML = future_text;
         stop_timer();
     } else {
-        start_timer();
         if (char == now_char || now_char == '&nbsp;' && char == ' ') {
+            start_timer();
             past_text += char;
             if (future_text.length >= 0) {
                 if (future_text[0] == ' ') {
@@ -76,7 +76,7 @@ async function change_typing_text(char) {
             else
                 document.getElementById('future__text').innerHTML = future_text;
             document.getElementById('carriage__char').className = "style_ok";
-        } else {
+        } else if (timer_work) {
             document.getElementById('carriage__char').className = "style_wrong";
             add_wrong();
         }
@@ -176,7 +176,7 @@ function get_result() {
     if (localStorage.getItem('results') == null) {
         alert("no results");
     } else {
-        alert(localStorage.getItem('results'));
+        alert("{" + localStorage.getItem('num') + "}" + localStorage.getItem('results'));
     }
 }
 
