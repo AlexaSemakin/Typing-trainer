@@ -176,7 +176,7 @@ function get_result() {
     if (localStorage.getItem('results') == null) {
         alert("no results");
     } else {
-        alert("Task {" + (parseInt(localStorage.getItem('num')) - 1) + "}. " + localStorage.getItem('results'));
+        alert("Номер задания - " + (parseInt(localStorage.getItem('num')) - 1) + ". \n " + localStorage.getItem('results'));
     }
 }
 
