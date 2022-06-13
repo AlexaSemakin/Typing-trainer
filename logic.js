@@ -169,7 +169,7 @@ async function get_text() {
     num %= 81;
     num = num == 0 ? 1 : num;
     localStorage.setItem('num', num.toString());
-    return await (await fetch("texts_1/" + num.toString() + ".txt")).text()
+    return await (await fetch("texts_2/" + num.toString() + ".txt")).text()
 }
 
 function get_result() {
