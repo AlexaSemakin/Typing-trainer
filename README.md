@@ -1,4 +1,4 @@
-# Typing Speed Trainer
+# Typing Trainer
 
 ## О проекте
 
